@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Caprasimo&family=Open+Sans:wght@400;600&display=swap');
+
+@font-face {
+  font-family: 'HANAMDAUM';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+  font-weight: 400, 700;
+  font-style: normal;
+}
+
+html {
+  font-size: 10px;
+}
+
+h1 {
+  width: 50%;
+  color: whitesmoke;
+  background-color: #FF8C20;
+  text-align: center;
+  font-family: 'Agdasima', sans-serif;
+  font-size: 4rem;
+  border: 1px solid #FF8C20;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1::before {
+  content: '새겨들을만한 ';
+}
+
+h1::after {
+  content: ' 🔊';
+}
+
+h1:active {
+  font-size: 5rem;
+  transition: font-size 0.5s;
+}
+
+section {
+  text-align: center;
+  /* padding-bottom: rem; */
+  /* width: 50%;
+  height: 50%; */
+  font-family: 'HANAMDAUM';
+  border: 1px solid green;
+  padding: 10px;
+  box-shadow: 0 0 3px 3px green;
+  margin-bottom: 2rem;
+}
+
+section:hover,:focus{
+  background-color: #C5FA62;
+  transition: background-color 0.5s;
+}
+
+.slogan-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem;
+  text-shadow: 1px 1px 2px gray;
+  /* border: 1px solid black; */
+}
+
+.speaker {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  /* border: 1px solid black; */
+}
+
+.char-img {
+  width: 20%;
+  height: 20%;
+}
