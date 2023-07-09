@@ -1,16 +1,16 @@
-@import url("./reset.css");
+/* @import url("./reset.css"); */
 
 html {
   font-size: 10px;
 }
 
-.head {
+h1 {
   background-color: #57EE27;
   font-size: 3rem;
   text-align: center;
-  margin: 5px;
-  /* box-sizing: content-box; */
-  /* display: inline-block; */
+  width: 10rem;
+  margin: 0 auto;
+  box-sizing: content-box;
 }
 
 .types {
@@ -26,4 +26,17 @@ html {
   padding: 10px;
   border-radius: 50%;
   margin: 0 5px;
+}
+
+.login {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sign-up {
+  font-size: rem;
+  background-color: #57EE27;
+  width: 10%;
+  height: 5%;
+  margin: 5px auto;
 }
