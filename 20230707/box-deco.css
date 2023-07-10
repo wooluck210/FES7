@@ -39,14 +39,18 @@ div {
 .box3 {
   color: white;
   font-weight: bold;
-  outline: 3px dashed #E5D5FF;
+  /* outline: 3px dashed #E5D5FF; */
+  border: 3px dashed #E5D5FF;
   border-radius: 35px;
   background: linear-gradient(90deg, #8c4bf5, #316EF1);
   /* background-color: red; */
+  background-clip: padding-box;
 }
 
 .box4 {
   font-weight: bold;
   border-radius: 0 30px 30px 30px;
   box-shadow: inset 1px 1px #EDEDED, 5px 5px 3px #EDEDED, inset 1px -1px #EDEDED, inset -1px 1px #EDEDED;
+  /* border: 5px solid grey;
+  box-shadow: 5px 5px 0 0 #eee; */
 }

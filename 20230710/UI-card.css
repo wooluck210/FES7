@@ -1,0 +1,86 @@
+body, h1, h2, p {
+  margin: 0;
+}
+
+h1, h2 {
+  font: inherit;
+}
+
+p {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pretendard-Regular', sans-serif;
+  color: #29363D;
+}
+
+.content-box {
+  width: 288px;
+  border-radius: 8px 8px 0 0;
+  /* overflow: hidden; */
+  background: #FFF;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+  /* padding: 24px 16px 16px; */
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 288/196;
+  border-radius: 8px 8px 0 0;
+}
+
+.text {
+  padding: 24px 16px 16px;
+}
+
+.title {
+  /* width: 200px;
+  height: 19px; */
+  color: #29363D;
+  font-weight: 700;
+  /* 한줄 말줄임 처리 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.descript {
+  color: #29363D;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 14px;
+  width: 256px;
+  height: 40px;
+  color: #5A6A72;
+  margin: 16px 0;
+  line-height: 1.66;
+  min-height: calc(14px *1.6 *2);
+}
+
+.read {
+  padding: 0;
+  color: #29363D;
+  /* width: 70px; */
+  /* height: 24px;
+  border: 0px; */
+  background-color: hsl(0, 0%, 100%, 0);
+}
