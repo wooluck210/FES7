@@ -3,19 +3,53 @@ body, h1, p {
   padding: 0;
 }
 
-section {
+body {
+  background: url(./images/bg.png), lightgray 50% / cover no-repeat;
+  /* width: 1920px;
+  height: 1080px; */
+}
+
+.wrapper {
   width: 300px;
   height: auto;
-  background-color: red;
+  margin: 0 auto;
 }
 
 .animal-img {
   width: auto;
   height: 300px;
-  background-color: blue;
+  background-image: url(./images/animal07.png);
 }
 
 .animal-text {
   width: auto;
   height: 306px;
+  background: #9C6035;
+  background-image: url(./images/green.png);
+  background-repeat: no-repeat;
+  background-size: 300px 50px;
+  background-position: top center;
+  border-radius: 0px 0px 30px 30px;
+  border-bottom: 10px solid #46260E;
+  padding: 50px 20px 20px;
+}
+
+h1 {
+  color: #FFF;
+  /* font-family: Arial; */
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+p {
+  color: #E8BC9C;
+  /* font-family: Arial; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 260px;
+  height: 130px;
 }

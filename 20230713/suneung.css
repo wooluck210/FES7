@@ -1,6 +1,7 @@
 table {
   border: 3px solid black;
   border-collapse: collapse;
+  width: 100%;
 }
 
 th, td {
@@ -13,5 +14,6 @@ tfoot td {
 }
 
 caption {
+  padding-top: 30px;
   caption-side: bottom;
 }
