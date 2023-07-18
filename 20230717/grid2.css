@@ -1,0 +1,105 @@
+.grid {
+  width: 520px;
+  height: 520px;
+  display: grid;
+  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  background-color: #eee;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.a { 
+  background-color: aqua;
+  grid-area: 1/1/2/3;
+}
+.b { 
+  background-color: brown;
+  grid-area: 1/3/3/4;
+}
+.c { 
+  background-color: chartreuse;
+}
+.d { 
+  background-color: darkblue;
+}
+.e { 
+  background-color: darkgoldenrod;
+}
+.f { 
+  background-color: fuchsia;
+  grid-area: 3/2/4/4;
+}
+
+.flex {
+  width: 520px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flex div {
+  flex-basis: 0;
+}
+.con1 {
+  flex-grow: 3;
+  display: flex;
+  gap: 10px;
+
+}
+.con1-1 {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.j {
+  flex-grow: 2;
+}
+.g {
+  flex-grow: 3;
+}
+.con1-1-1 {
+  flex-grow: 2;
+  display: flex;
+  gap: 10px;
+
+}
+.h {
+  flex-grow: 3;
+}
+.i {
+  flex-grow: 2;
+}
+
+.con2 {
+  flex-grow: 2;
+  display: flex;
+  gap: 10px;
+}
+.con2 .k {
+  flex-grow: 200;
+}
+.con2 .l {
+  flex-grow: 310;
+}
+
+.g {
+  background-color: saddlebrown;
+}
+.h {
+  background-color: salmon;
+}
+.i {
+  background-color: sandybrown;
+}
+.j {
+  background-color: seagreen;
+}
+.k {
+  background-color: aqua;
+}
+.l {
+  background-color:darkblue;
+}
