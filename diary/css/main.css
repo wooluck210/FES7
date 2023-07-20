@@ -1,0 +1,152 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main {
+  flex-grow: 1;
+}
+
+.heart-title {
+  font-family: 'Pretendard-Bold';
+  line-height: 1;
+  padding: 0.5em 0 0.5em 2em;
+  background-image: url(../img/heart.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 2em;
+  margin-bottom: 16px;
+}
+
+/* main layout */
+.main {
+  display: flex;
+  gap: 40px;
+}
+
+.main-form {
+  min-width: 360px;
+  /* width: 416px; */
+  padding: 56px 39px 56px 0;
+  flex-shrink: 0;
+  border-right: 1px solid #FF4F6E;
+  flex-grow: 1;
+}
+
+.main-diary {
+  flex-grow: 2;
+}
+
+@media (max-width:1024) {
+  .main {
+    flex-direction: column;
+    margin: 40px auto;
+  }
+  .main-form {
+    min-width: 100%;
+    border: 0;
+    padding: 0;
+  }
+}
+
+/* article */
+.list li {
+  margin: 70px 0;
+}
+
+.diary-article {
+  border: 1px solid #677880;
+  /* 세개만 적으면 1px이 탑을 제외하고 다 적용 */
+  border-width: 4px 1px 1px;
+  padding: 60px 48px;
+  position: relative;
+  margin: 40px 0;
+}
+.diary-article::before,
+.diary-article::after {
+  content: '';
+  display: block;
+  background-color: #FFFAF0;
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  background-size: contain;
+}
+
+.diary-article::before {
+  top: -20px;
+  left: 30px;
+  background-image: url(../img/quote-start.svg);
+  z-index: 10;
+}
+.diary-article::after {
+  bottom: -20px;
+  right: 30px;
+  background-image: url(../img/quote-end.svg);
+}
+
+.diary-article header {
+  display: flex;
+  /* 제목이 길어지면 다음 item을 자동으로 줄바꿈을 하겠다는 것 */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.diary-article header::before {
+  /* 가상요소의 내용 */
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #677880;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.article-title {
+  font-family: 'Pretendard-Bold';
+}
+.article-time {
+  font-size: 12px;
+  color: #677880;
+}
+.article-content {
+  color: #5A6A72;
+  font-size: 14px;
+  line-height: 140% ;
+}
+
+/* 버튼 */
+.button-group {
+  border: 1px solid #677880;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 1px solid #5A6A72;
+  border-radius: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+button {
+  background-color: white;
+}
+
+.button-group span {
+  width: 1px;
+  height: 16px;
+  background-color: #d8ddde;
+}
+
+.button-group button {
+  opacity: 0.5;
+  transition: all ;
+}

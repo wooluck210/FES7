@@ -12,36 +12,102 @@ body {
   margin: 0 auto;
   position: relative;
   transform: translateY(50%);
-  z-index: 300;
+  z-index: 100;
 }
 
+/* 귀 */
 .ear {
   width: 130px;
   height: 90px;
   border-radius: 100px 100px 0px 0px;
   background: #562A1D;
 }
-
 .ear.left {
   transform: rotate(-40deg);
   position: absolute;
   top: -7%;
   left: -5%;
+  z-index: -1;
 }
 .ear.right {
   transform: rotate(40deg);
   position: absolute;
   top: -7%;
   left: 70%;
+  z-index: -1;
 }
 
-/* .face {
-  width: 372px;
-  height: 341px;
-  border: 1px solid black;
-  border-radius: 372px;
-  background: #E2A56C;
-  margin: 0 auto;
-  position: relative;
-  transform: translateY(50%);
-} */
+/* 눈 그림자 */
+.circle {
+  width: 66px;
+  height: 87px;
+  background-color: #562A1D;
+  border-radius: 50%;
+}
+.circle.left {
+  transform: rotate(-33deg);
+  position: absolute;
+  right: 22%;
+  top: 25%;
+}
+.circle.right {
+  transform: rotate(33deg);
+  position: absolute;
+  left: 22%;
+  top: 25%; 
+}
+
+/* 눈 */
+.eye {
+  width: 44px;
+  height: 44px;
+  background-color: #1E1E22;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.white-eye {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 코, 입 */
+.beard {
+  width: 175px;
+  height: 138px;
+  background-color: #fff;
+  border: 1px solid #1E1E22;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -18%);
+}
+.nose {
+  width: 50px;
+  height: 37px;
+  background-color: #1E1E22;
+  border-radius: 50%;
+  position: absolute;
+  /* top: 50%; */
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.mouse {
+  width: 29px;
+  height: 55px;
+  border-radius: 0px 0px 50px 50px;
+  background: #B90B1F;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}

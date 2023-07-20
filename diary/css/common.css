@@ -16,9 +16,10 @@
 body {
   margin: 0;
 }
-h1 {
+h1, h2, h3 {
   margin: 0;
   padding: 0;
+  font: inherit;
 }
 img {
   /* 이미지는 인라인 요소라 한줄로 정렬. 이미지가 텍스트의 베이스라인에 정렬되는 것을 위를 기준으로 정렬하기 위해 넣은 것이다. */
@@ -31,13 +32,39 @@ a {
 input, button {
   font: inherit;
 }
+button {
+  border: 0;
+  background-color: none;
+}
+button:enabled {
+  cursor: pointer;
+}
+ol, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
 
 /* CSS 적용 */
 body {
   font-family: 'Pretendard-Regular';
   background-color: #FFFAF0;
 }
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
 
+/* header */
 .header {
   background-color: #fff;
 }
@@ -63,30 +90,59 @@ body {
   width: 156px;
 }
 
+.header .login-text {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+/* .header .login-text p::after {
+  content: "|";
+  color: #D8DDDE;
+  margin-left: 24px;
+} */
+.header .login-text p strong {
+  box-shadow: inset 0 -0.5em 0 #FF4F6E;
+}
+
+@media (min-width:601px) {
+  .header .login-text p::after {
+    content: "|";
+    color: #D8DDDE;
+    margin-left: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .header .login-text p {
+    position: absolute;
+    top: 160px;
+    right: 0;
+  }
+}
+
 /* 회원가입 버튼 */
-.btn-join {
+[class^='btn'] {
   /* inline에서는 높이 값을 가질 수 없음. 단, flex가 적용되면 자동으로 주어진다. */
   display: inline-flex;
   height: 40px;
   padding: 0 20px 0 52px;
   align-items: center;
-  background-image: url(../img/icon-join.svg);
   background-repeat: no-repeat;
   background-size: 32px;
   background-position: 10px 50%;
 }
+.btn-join {
+  background-image: url(../img/icon-join.svg);
+}
 
 /* 로그인 버튼 */
 .btn-login {
-  /* inline에서는 높이 값을 가질 수 없음. 단, flex가 적용되면 자동으로 주어진다. */
-  display: inline-flex;
-  height: 40px;
-  padding: 0 20px 0 52px;
-  align-items: center;
   background-image: url(../img/icon-login.svg);
-  background-repeat: no-repeat;
-  background-size: 32px;
-  background-position: 10px 50%;
+}
+
+/* 로그아웃 버튼 */
+.btn-logout {
+  background-image: url(../img/icon-logout.svg);
 }
 
 /* 로그인 */
@@ -129,7 +185,7 @@ body {
   border-bottom: 3px solid #FF4F6E;
 }
 
-.form {
+.login .form {
   width: 392px;
   margin: 40px auto 50px;
 }
@@ -154,7 +210,8 @@ body {
   margin-bottom: 24px;
 }
 
-.form button[type='submit'] {
+/* .form button[type='submit'] */
+button[type='submit'] {
   width: 100%;
   height: 48px;
   border: 0;
@@ -168,4 +225,16 @@ body {
   /* margin: 0 auto; */
   color: #677880;
   font-size: 12px;
+}
+
+.form textarea {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 1px solid #677880;
+  border-radius: 4px;
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  font: inherit;
 }

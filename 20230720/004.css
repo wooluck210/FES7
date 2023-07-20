@@ -1,0 +1,46 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(90deg, yellow 0%, seagreen 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  /* border: 2px dashed tomato; */
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  /* 기준 */
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform: perspective(200px) scale(0.7);
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: rgb(52, 27, 165, 0.7);
+}
+.back {
+  background-color: rgb(161, 192, 238, 0.7);
+  transform: rotateY(180deg);
+  /* transform: translateY(-100%); */
+}
+
+/* hover */
+.wrap:hover .card {
+  transform: perspective(100px) scale(1.2) rotateY(900deg);
+}
