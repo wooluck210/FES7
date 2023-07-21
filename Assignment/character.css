@@ -4,15 +4,23 @@ body {
 }
 
 .lesser {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto; 
+  position: relative;
+}
+
+/* 얼굴 */
+.face {
   width: 372px;
   height: 341px;
-  border: 1px solid black;
+  border: 1px solid transparent ;
   border-radius: 372px;
   background: #E2A56C;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
   transform: translateY(50%);
-  z-index: 100;
+  z-index: 1;
 }
 
 /* 귀 */
@@ -25,16 +33,16 @@ body {
 .ear.left {
   transform: rotate(-40deg);
   position: absolute;
-  top: -7%;
-  left: -5%;
+  top: 40%;
+  left: -3%;
   z-index: -1;
 }
 .ear.right {
   transform: rotate(40deg);
   position: absolute;
-  top: -7%;
+  top: 40%;
   left: 70%;
-  z-index: -1;
+  z-index: -10;
 }
 
 /* 눈 그림자 */
@@ -43,18 +51,21 @@ body {
   height: 87px;
   background-color: #562A1D;
   border-radius: 50%;
+  z-index: 100;
 }
 .circle.left {
   transform: rotate(-33deg);
   position: absolute;
   right: 22%;
-  top: 25%;
+  /* top: 25%; */
+  bottom: 15%;
 }
 .circle.right {
   transform: rotate(33deg);
   position: absolute;
   left: 22%;
-  top: 25%; 
+  /* top: 25%;  */
+  bottom: 15%;
 }
 
 /* 눈 */
@@ -79,17 +90,18 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* 코, 입 */
+/* 수염, 코, 입 */
 .beard {
   width: 175px;
   height: 138px;
   background-color: #fff;
-  border: 1px solid #1E1E22;
+  border: 1px solid #fff;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
+  top: 80%;
+  /* bottom: 1%; */
   left: 50%;
-  transform: translate(-50%, -18%);
+  transform: translate(-50%);
 }
 .nose {
   width: 50px;
@@ -110,4 +122,46 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%);
+}
+
+/* 무늬 */
+.small-pattern {
+  width: 33px;
+  height: 33px;
+  background-color: #fff;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+}
+.small-pattern.left {
+  position: absolute;
+  left: 33%;
+  bottom: 32%;
+  z-index: 50;
+}
+.small-pattern.right {
+  position: absolute;
+  right: 33%;
+  bottom: 32%;
+  z-index: 50;
+}
+
+.large-pattern {
+  width: 70px;
+  height: 149px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.large-pattern.left {
+  transform: rotate(40deg);
+  position: absolute;
+  left: 6%;
+  bottom: -15%;
+  z-index: 50;
+}
+.large-pattern.right {
+  transform: rotate(-40deg);
+  position: absolute;
+  right: 6%;
+  bottom: -15%;
+  z-index: 50;
 }
