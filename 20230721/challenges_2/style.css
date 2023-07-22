@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 448px;
+  height: 494px;
+  border-radius: 20px;
+  background: #EEE;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+}
