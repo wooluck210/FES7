@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .text-hide {
+        /* 어떤 상황에서도 대처할 수 있게 만든 코드 */
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        /* 경로에 따라 html 요소 자르는 속성
+        inset(50%)는 상하좌우에서 영역의 50%씩 자르는 것 */
+        clip-path: inset(50%);
+      }
+      .label-hold {
+        position: relative;
+      }
+      .label-hold::before {
+        display: inline-block;
+        content: "";
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        border: 1px solid black;
+        vertical-align: -5px;
+      }
+      /* 키보드를 사용했을 때 포커싱이 나타남 */
+      .input-hold:focus-visible + .label-hold::before {
+        outline: 2px solid yellowgreen;
+        outline-offset: 3px;
+      }
+
+      .label-hold::after {
+        content: "";
+        /* position 속성을 적용하면 display는 자동으로 block으로 변경 */
+        position: absolute;
+        top: -3px;
+        left: 20px;
+        width: 22px;
+        height: 22px;
+        background: url(./images/checkmark.png) 0 0/22px no-repeat;
+        opacity: 0;
+        transition: all 0.4s;
+      }
+      .input-hold:checked + .label-hold::after {
+        left: 0;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="input-hold" class="input-hold text-hide" />
+    <label for="input-hold" class="label-hold">로그인 상태 유지</label>
+  </body>
+</html>

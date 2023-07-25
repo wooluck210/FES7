@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      body {
+        background-color: tomato;
+        box-shadow: inset 0 0 100px blue;
+        height: 100vh;
+        display: flex;
+      }
+
+      .play {
+        border: 1px solid yellow;
+        width: 980px;
+        height: 500px;
+        background-color: skyblue;
+        margin: auto auto;
+        display: flex;
+      }
+      .frog {
+        background-color: green;
+        width: 200px;
+        font-size: 20px;
+        margin: 10px;
+      }
+      /* .frog.first {
+        margin-left: auto;
+      }
+      .frog.last {
+        margin-right: auto;
+      } */
+      /* .play::before,
+      .play::after {
+        content: "";
+        flex-grow: 1;
+        box-shadow: inset 0 0 20px red;
+      } */
+      .frog.first {
+        background-color: sienna;
+        /* height: 400px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="play">
+      <div class="frog first">Frog</div>
+      <div class="frog">Frog</div>
+      <div class="frog last">Frog</div>
+    </div>
+  </body>
+</html>
