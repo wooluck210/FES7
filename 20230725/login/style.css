@@ -110,8 +110,8 @@ section {
   align-items: center;
   gap: 8px;
   /* background-color: transparent; */
-  background-image: url(./imgs/check-box.svg);
-  background-repeat: no-repeat;
+  /* background-image: url(./imgs/check-box.svg);
+  background-repeat: no-repeat; */
 }
 
 .checkbox label {
@@ -122,13 +122,48 @@ section {
   line-height: normal;
 }
 
-#login-maintain {
+/* #login-maintain {
   width: 22px;
   height: 22px;
   background-color: red;
   background-image: url(./imgs/check-box.svg);
   background-repeat: no-repeat;
+} */
+.text-hide {
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  position: absolute;
 }
+.login-maintain {
+  position: relative;
+}
+.login-maintain::before {
+  display: inline-block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  background-image: url(./imgs/check-box.svg);
+  background-repeat: no-repeat;
+  vertical-align: -5px;
+}
+.login-maintain::after {
+  content: "";
+  position: absolute;
+  top: 0.5px;
+  left: 20px;
+  width: 22px;
+  height: 22px;
+  background: url(./imgs/blue-check.png) 0 0/22px no-repeat;
+  opacity: 0;
+}
+#login-maintain:checked + .login-maintain::after {
+  left: 0;
+  opacity: 1;
+}
+
 
 .main-login-btn {
   display: block;
@@ -143,7 +178,9 @@ section {
 }
 
 .join {
-  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  gap: 12px;
   color: #767676;
   font-size: 14px;
   font-style: normal;
@@ -151,9 +188,7 @@ section {
   line-height: normal;
   /* 마진 병합 현상 */
   margin: 20px auto;
-  margin-left: auto;
-  margin-right: auto;
-
+  /* margin-left: 158px; */
 }
 
 .or {
