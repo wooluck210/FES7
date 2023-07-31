@@ -1,30 +1,6 @@
-@font-face {
-  font-family: 'SpoqaHanSansNeo-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-/* reset */
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'SpoqaHanSansNeo-Regular';
-  font-size: inherit;
-  font-weight: inherit;
-  box-sizing: border-box;
-}
-header, p, a {
-  /* font-family: 'SpoqaHanSansNeo-Regular'; */
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-input {
-  margin: 0;
-  padding: 0;
-}
+/* reset */
+@import "./reset.css";
 
 /* CSS 적용 */
 main {
@@ -100,8 +76,28 @@ section {
   border-radius: 5px;
   border: 1px solid #C4C4C4;
   background: #FFF;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   padding-left: 16px;
+}
+
+.user-id .user-input:focus,
+.user-pw .user-input:focus {
+  border-radius: 5px;
+  border: 2px solid #F4492E;
+}
+
+.id-required {
+  color: #F4492E;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 4px;
+  margin-top: 6px;
+}
+
+.user-id, .user-pw {
+  margin-bottom: 10px;
 }
 
 .checkbox {
@@ -175,6 +171,7 @@ section {
   border-radius: 5px;
   background: #2F80ED;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .join {

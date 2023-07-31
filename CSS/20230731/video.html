@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /* 비디오  배경 */
+      video {
+        /* width: 100%; */
+        /* max-width: 100%; */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100vh;
+        opacity: 0.2;
+        /* optional */
+        pointer-events: none;
+      }
+
+      .cont-video {
+        position: relative;
+        padding-top: 56.25%;
+      }
+      .video-next-level {
+        position: absolute;
+        /* width: 100%; */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 속성에 controls을 안 넣으면 컨트롤러바 제거 -->
+    <article class="cont-video">
+      <iframe class="video-next-level" src="https://www.youtube.com/embed/4TWR90KJl84?autoplay=1&mute=1&loop=1&playlist=4TWR90KJl84&controls=1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </article>
+  </body>
+</html>
