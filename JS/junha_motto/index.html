@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>명언 모음집</title>
+  </head>
+  <body>
+    <h1>명언 모음집</h1>
+    <div class="quotes"></div>
+    <script>
+      sayings = [
+        { "quote": "사랑이란 서로 마주보는 것이 아니라 둘이서 똑같은 방향을 내다보는 것이라고 인생은 우리에게 가르쳐 주었다.", "person": "생택쥐베리" },
+        { "quote": "반성하지 않는 삶은 살 가치가 없다.", "person": "소크라테스" },
+        { "quote": "경영대학원은 단순한 행동보다 어렵고 복잡한 행동을 가르치지만, 단순한 행동이 보다 효과적이다.", "person": "워렌 버핏" },
+        { "quote": "만약 누군가를 당신의 편으로 만들고 싶다면, 먼저 당신이 그의 진정한 친구임을 확신시켜라.", "person": "에이브러햄 링컨" },
+        { "quote": "5", "person": "5-1" },
+        { "quote": "6", "person": "6-1" },
+        { "quote": "7", "person": "7-1" },
+        { "quote": "8", "person": "8-1" },
+        { "quote": "9", "person": "9-1" },
+        { "quote": "10", "person": "10-1" },
+      ];
+
+      for (let i = 0; i <= sayings.length; i++) {
+        sayingTag = document.createElement("span");
+        document.body.appendChild(sayingTag);
+        sayingTag.innerText = sayings[i]["quote"];
+        // sayingTag.innerText = sayings[i]["quote"];
+      }
+
+      // function lottery(quote) {
+      //   let order = [];
+      //   let result = [];
+      //   for (let i = 0; quote.length <= 9; i++) {
+      //     let num = parseInt(Math.random() * 10 + 1);
+      //     if (!order.includes(num)) {
+      //       order.push(num);
+      //     }
+      //   }
+      //   return result;
+      // }
+    </script>
+  </body>
+</html>
