@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <button id="btn1">클릭해봐요!</button>
+    <button id="btn2">클릭해봐요!</button>
+    <script>
+      // this가 가리키는 것은 전역(window) 객체
+      function a() {
+        console.log(this);
+      }
+      a();
+      // this가 가리키는 것은 myObj 객체
+      const myObj = {
+        val1: 100,
+        func1: function () {
+          console.log(this);
+        },
+      };
+      myObj.func1();
+
+      // myObj 객체를 가리키지 않고 전역 객체를 가리킴
+      // test가 전역 공간에 선언되어 있기 때문이다.
+      let test = myObj.func1;
+      test();
+
+      // 요소 그 자체(각각 btn1과 btn2)를 가리키고 있다.
+      let button1 = document.getElementById("btn1");
+      button1.addEventListener("click", myObj.func1);
+      let button2 = document.getElementById("btn2");
+      button2.addEventListener("click", test);
+    </script>
+  </body>
+</html>

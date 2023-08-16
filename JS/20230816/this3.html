@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // call 함수
+      var peter = {
+        name: "Peter Parker",
+        sayName: function () {
+          console.log(this.name);
+        },
+      };
+
+      var bruce = {
+        name: "Bruce Wayne",
+      };
+      // peter의 sayname을 불러오고 가리키는 this 객체는 call을 통해 bruce를 가리킨다.
+      peter.sayName.call(bruce);
+
+      var peter2 = {
+        name: "Peter Parker",
+        sayName: function (감탄사) {
+          console.log(this.name + 감탄사);
+        },
+      };
+
+      var bruce2 = {
+        name: "Bruce Wayne",
+      };
+      // "!"인자가 sayName함수 안에 인자로 전달된다. 인자는 여러 개 전달할 수 있다.
+      peter2.sayName.call(bruce2, "!");
+
+      //////////////////////////////////////
+      // apply 함수 : call과 같이 this를 설정. 인자 전달도 같다.
+      // 두 함수의 차이 : call은 여러 인자를 콤마로 전달, apply는 여러 인자를 배열로 전달
+      var peter3 = {
+        name: "Peter Parker",
+        sayName: function (is, is2) {
+          console.log(this.name + " is " + is + " or " + is2);
+        },
+      };
+
+      var bruce3 = {
+        name: "Bruce Wayne",
+      };
+
+      peter3.sayName.apply(bruce3, ["batman", "richman"]);
+
+      // bind
+      // 인수로 들어온 객체로 this가 고정된다.
+      function sayName() {
+        console.log(this.name);
+      }
+
+      var bruce = {
+        name: "bruce",
+        sayName: sayName,
+      };
+
+      var peter = {
+        name: "peter",
+        sayName: sayName.bind(bruce),
+      };
+
+      peter.sayName();
+      bruce.sayName();
+    </script>
+  </body>
+</html>
