@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let a = new Set("abc");
+      let b = new Set("cde");
+      // 교집합
+      // set 자료형에 전개 구문을 사용하면 배열로 변환된다.
+      let cro = [...a].filter((value) => b.has(value));
+      // 합집합
+      let union = new Set([...a].concat([...b]));
+      // 차집합
+      let dif = [...a].filter((x) => !b.has(x));
+
+      function lottery() {
+        // let lottoArr = [];
+        let lottoSet = new Set();
+        // while (lottoArr.length < 6) {
+        while (lottoSet.size < 6) {
+          let num = parseInt(Math.random() * 45 + 1);
+
+          // if (!lottoArr.includes(num)) {
+          //   lottoArr.push(num);
+          // }
+          lottoSet.add(num);
+        }
+        console.log(lottoSet);
+        return lottoSet;
+      }
+    </script>
+  </body>
+</html>
