@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <ul>
+      <li><button>빨강</button></li>
+      <li><button>노랑</button></li>
+      <li><button>초록</button></li>
+    </ul>
+
+    <script>
+      const red = document.querySelectorAll("button")[0];
+      const yellow = document.querySelectorAll("button")[1];
+      const green = document.querySelectorAll("button")[2];
+
+      const btns = document.querySelectorAll("button");
+      const div = document.querySelector("div");
+      let colors = ["red", "yellow", "green"];
+
+      for (let i = 0; i <= 3; i++) {
+        btns[i].addEventListener("click", function () {
+          div.classList.remove("red", "yellow", "green");
+          div.classList.toggle(colors[i]);
+        });
+      }
+
+      // red.addEventListener("click", function () {
+      //   div.classList.remove("yellow");
+      //   div.classList.remove("green");
+      //   div.classList.toggle("red");
+      // });
+      // yellow.addEventListener("click", function () {
+      //   div.classList.remove("red");
+      //   div.classList.remove("green");
+      //   div.classList.toggle("yellow");
+      // });
+      // green.addEventListener("click", function () {
+      //   div.classList.remove("yellow");
+      //   div.classList.remove("red");
+      //   div.classList.toggle("green");
+      // });
+    </script>
+  </body>
+</html>

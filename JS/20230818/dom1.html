@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- <ul>
+      <li><a href=""></a></li>
+      <li id="item2"><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul> -->
+    <button>HELLO!</button>
+    <!-- <button>Make me BLUE!</button> -->
+    점심 식단
+    <article id="container">
+      <ul>
+        <li>탕수육</li>
+        <li class="item-second">유산슬</li>
+        <li>짜장면</li>
+      </ul>
+    </article>
+    저녁 식단
+    <article>
+      <ul>
+        <li>된장국</li>
+        <li class="item-second">김치찌개</li>
+        <li>해장국</li>
+      </ul>
+    </article>
+
+    <script>
+      // document 객체를 통해서 요소를 찾으면 모든 요소를 탐색하게 되어서 성능이 안 좋아진다.
+      const lis = document.getElementsByTagName("li");
+      const lis2 = document.querySelectorAll("li");
+
+      // const container = document.querySelector("#container ul");
+      // container.append(document.createElement('li'))
+
+      // const cls = document.getElementsByClassName("item-second")[0];
+      // const cont = document.getElementById("container");
+      // 탐색의 범위를 좁혀서 찾는 것이 성능이 좋다.
+      // const liss = cont.getElementsByTagName("li");
+
+      // const lisquery = document.querySelector(".item-second");
+
+      // 이벤트의 타입에는 click, mouseover, mouseout, wheel 등 다양한 이벤트를 감지합니다.
+      // listener 함수의 인수에는 이벤트에 대한 정보가 담겨있습니다.
+
+      // const myBtn = document.querySelector("button");
+
+      // myBtn.addEventListener("click", function () {
+      //   console.log("hello world");
+      // });
+
+      //////////////////////////////////
+      const myBtn2 = document.querySelector("button");
+
+      myBtn2.addEventListener("click", function () {
+        // blue 라는 클래스의 속성 값을 지정 할 수 있습니다.
+        myBtn2.classList.add("blue");
+
+        // myBtn.classList.remove("blue");     클래스를 제거합니다.
+        // myBtn.classList.toggle("blue");     클래스를 토글합니다. 없으면 넣어주고, 있으면 제거합니다.
+        // myBtn.classList.contains("blue");   해당하는 클래스가 있는지 확인합니다.
+      });
+    </script>
+  </body>
+</html>
