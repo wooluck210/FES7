@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      class Robot {
+        #important;
+        constructor(name, impo) {
+          this.name = name;
+          this.#important = impo;
+        }
+
+        sayYourName() {
+          console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+      }
+
+      const bot = new Robot("smith", 960210);
+      // console.log(bot.#important)
+      // bot.name; // smith
+
+      // private 프로퍼티 수정
+      class Robot2 {
+        #password;
+
+        constructor(name, pw) {
+          this.name = name;
+          this.#password = pw;
+        }
+
+        sayYourName() {
+          console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+
+        // getter, settet로 값 제어하기
+        // getpassword() {
+        //   return this.#password;
+        // }
+
+        // setpassword(pw) {
+        //   this.#password = pw;
+        // }
+
+        get password() {
+          return this.#password;
+        }
+
+        set password(pw) {
+          this.#password = pw;
+        }
+      }
+
+      const bot2 = new Robot2("재현", 1234);
+      console.log(bot2.password);
+    </script>
+  </body>
+</html>
