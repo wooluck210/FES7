@@ -1,0 +1,15 @@
+.rect {
+  width: 100;
+  height: 100;
+  border: 1px solid black;
+  background-color: blue;
+  border-radius: 0;
+}
+
+.circle {
+  width: 100;
+  height: 100;
+  border: 1px solid black;
+  background-color: blue;
+  border-radius: 50%;
+}/*# sourceMappingURL=024_믹스인_연습.css.map */

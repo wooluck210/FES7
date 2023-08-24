@@ -1,0 +1,28 @@
+//Scss
+//at-root 사용 빈도 많지 않다.
+// .article {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-top: 10px;
+//   .article-content {
+//     font-size: 14px;
+//     opacity: 0.7;
+//     @at-root i {
+//       opacity: 0.5;
+//     }
+//   }
+// }
+
+.one {
+  color: red;
+  .two {
+    color: green;
+    .three {
+      color: blue;
+      @at-root.four {
+        color: pink;
+      }
+    }
+  }
+}
