@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>isComposing</title>
+  </head>
+  <body>
+    <input type="text" placeholder="이름을 입력해주세요" />
+
+    <script>
+      const inputText = document.querySelector("input[type='text']");
+
+      inputText.addEventListener("compositionstart", function (e) {
+        console.log("🏃‍♀️시작!");
+        inputText.style.backgroundColor = "skyblue";
+      });
+
+      inputText.addEventListener("compositionend", function (e) {
+        console.log("⛳️끝!");
+        inputText.style.backgroundColor = "salmon";
+      });
+
+      inputText.addEventListener("input", function (e) {
+        if (e.isComposing) {
+          console.log("한글입력:", e.data);
+        } else {
+          console.log("영문/숫자/기호:", e.data);
+        }
+      });
+    </script>
+  </body>
+</html>
