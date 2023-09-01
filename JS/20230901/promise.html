@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // promise 생성자 함수로 비동기 통신을 감쌌다.
+      const orderCoffee = new Promise((resolve, reject) => {
+        const requestObj = new XMLHttpRequest();
+        requestObj.open("GET", "orderCoffee.txt");
+        requestObj.onreadystatechange = () => {
+          if (requestObj.readyState === 4) {
+            // 통신 완료
+            if (requestObj.status === 200) {
+              // 통신 성공
+              const result = requestObj.responseText;
+              resolve(result);
+            } else {
+              reject(new Error(`오늘의 커피 원두가 떨어졌습니다. ${requestObj.status}`));
+            }
+          }
+        };
+        requestObj.send();
+      });
+
+      // resolve가 실행되어야 then이 실행된다. 통신이 성공해야 한다.
+      // resovle의 인자를 then이 실행될 때 전달 받는다.
+      // reject의 인자를 catch가 실행될 때 전달 받는다.
+      orderCoffee
+        .then((asyncResult) => {
+          console.log(asyncResult);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      // console.log(orderCoffee);
+    </script>
+  </body>
+</html>
