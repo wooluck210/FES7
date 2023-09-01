@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      body {
+        margin: 100px;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: seagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="target"></div>
+    <script>
+      // 실습 : div 태그로 상자를 하나 만들고 키보드의 화살표 키를 눌러 왼쪽, 오른쪽으로 이동하도록 만들어 보세요.
+      const target = document.querySelector(".target");
+      let pos = 0;
+      let keys = "";
+
+      // window.addEventListener("keydown", moving);
+
+      // function moving(event) {
+      //   console.log(event.key);
+      //   if (event.key === "ArrowRight") {
+      //     pos += 5;
+      //     target.style.transform = `translate(${pos}px)`;
+      //   }
+      //   if (event.key === "ArrowLeft") {
+      //     pos -= 5;
+      //     target.style.transform = `translate(-${pos}px)`;
+      //   }
+      // }
+
+      function move(event) {
+        keys = event.key;
+      }
+      function stop() {
+        keys = "";
+      }
+
+      document.addEventListener("keydown", move);
+      document.addEventListener("keyup", stop);
+
+      function play() {
+        console.log();
+        switch (keys) {
+          case "ArrowRight":
+            pos += 5;
+            target.style.transform = `translate(${pos}px)`;
+            break;
+          case "ArrowLeft":
+            pos -= 5;
+            target.style.transform = `translate(${pos}px)`;
+            break;
+        }
+        requestAnimationFrame(play);
+      }
+
+      window.requestAnimationFrame(play);
+    </script>
+  </body>
+</html>
