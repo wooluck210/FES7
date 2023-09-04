@@ -1,0 +1,306 @@
+/* reset */
+body, h1, h2, p, ul, button {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4 {
+  font: inherit;
+}
+ul, li {
+  list-style: none;
+}
+button:enabled {
+  cursor: pointer;
+}
+img {
+  vertical-align: top;
+}
+input {
+  font: inherit;
+}
+button {
+  font: inherit;
+  border: 0;
+  background: none;
+}
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+
+body {
+  background-color: #EAE8FE;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* title */
+h1 {
+  text-align: center;
+  /* width: 386px;
+  margin: 0 auto; */
+}
+h1 img {
+  max-width: 50%;
+}
+
+/* main */
+main {
+  width: 748px;
+  max-width: 100%;
+  display: grid;
+}
+/* 749부터 적용하겠다. */
+@media (min-width: 749px) {
+  main {
+    grid-template-areas:
+      'machine balance'
+      'machine get-liquid';
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px auto;
+    gap: 20px 28px;
+    margin: 67px auto;
+  }
+}
+/* 768까지 적용하겠다. */
+@media (max-width: 748px) {
+  main {
+    grid-template-areas:
+      'machine'
+      'balance'
+      'get-liquid';
+    margin: 18px auto;
+  }
+  body {
+    background-color: white;
+  }
+}
+
+
+/* 
+main {
+  margin: 67px auto;
+  width: 748px;
+  max-width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 10.14fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 18px; 
+  grid-template-areas: 
+  'machine balance'
+  'machine get-liquid';
+  gap: 20px 28px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 50px auto;
+}
+@media (max-width: 748px) {
+  main {
+    grid-template-areas: 
+    'machine'
+    'balance'
+    'get-liquid';
+    grid-template-columns: 100%;
+    margin: 18px auto;
+  }
+}
+ */
+
+.machine {
+  background-color: white;
+  /* grid-area: 1/1/3/2; */
+  grid-area: machine;
+  padding: 30px 27px;
+}
+.balance {
+  background-color: white;
+  grid-area: balance;
+  padding: 9px 27px;
+}
+.get-liquid {
+  background-color: white;
+  grid-area: get-liquid;
+  padding: 25px 27px;
+
+  display: flex;
+  flex-direction: column;
+}
+.get-liquid .get-list {
+  /* 화면에 꽉차고, 넘치면 스크롤 생성 */
+  flex-grow: 1;
+  flex-basis: 364px;
+  flex-shrink: 0;
+}
+
+.get-liquid h2 {
+  text-align: center;
+  margin-bottom: 13px;
+}
+.total-price {
+  font-size: 12px;
+  text-align: right;
+  margin-top: 8px;
+}
+
+/* 판매음료 */
+.cola-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* 기본버튼 */
+[class^='btn'] {
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  min-height: 32px;
+  font-size: 13px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
+}
+
+.btn-cola {
+  border-radius: 10px;
+  padding: 11px 12px 9px;
+}
+.btn-cola img,
+.cola-name,
+.cola-price {
+  display: block;
+}
+
+.btn-cola img {
+  width: 36px;
+  margin: 0 auto;
+}
+.cola-name {
+  font-size: 9px;
+  margin: 6px 0;
+}
+.cola-price {
+  font-size: 12px;
+  background-color: #6327FE;
+  color: #fff;
+  padding: 5px 0px;
+  font-weight: normal;
+  border-radius: 30px;
+}
+
+.btn-cola.on {
+  box-shadow: 0px 0px 0px 4px #6327FE;
+}
+.btn-cola:disabled {
+  color: inherit;
+  position: relative;
+  /* overflow: hidden; */
+}
+.btn-cola:disabled::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+.soldout {
+  color: #eae8fe;
+  font-size: 14px;
+  z-index: 10;
+  border: 4px double #eae8fe;
+  position: absolute;
+  width: 45px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+}
+
+/* 잔액 */
+.bg-box {
+  background-color: #eae8fe;
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+#input-money {
+  border: 1px solid #bdbdbd;
+  width: 100%;
+  height: 32px;
+  padding: 6px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+#input-money::placeholder {
+  color: #bdbdbd;
+  font-size: 13px;
+}
+
+
+.balance .bg-box p {
+  font-weight: 700;
+}
+
+.get-list {
+  background-color: #EAE8FE;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 12px;
+  /* height: 106px; */
+  /* 내용이 넘칠 때 스크롤 만듬 */
+  overflow: auto;
+}
+.get-list li {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 0 10px;
+  height: 46px;
+  border-radius: 5px;
+  font-size: 9px;
+}
+
+/* li 뒤에 오는 li에 적용 */
+.get-list li ~ li {
+  margin-top: 6px;
+}
+
+.get-list li img {
+  width: 18px;
+}
+
+.get-list li strong {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-get {
+  background-color: #6327FE;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto calc((100% - 12px * 2) /3);
+  grid-template-rows: 33px 33px 106px;
+  gap: 12px;
+  margin-top: 20px;
+}
