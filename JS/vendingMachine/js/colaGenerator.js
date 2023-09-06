@@ -3,11 +3,13 @@ class ColaGenerator {
     this.itemList = document.querySelector('.cola-list');
   }
 
+  // 콜라 객체를 초기화한다.
   async setup() {
     const response = await this.loadData();
     this.colaFactory(response);
   }
   
+  // 콜라 관련 데이터를 로드한다.
   async loadData() {
     try {
       const response = await fetch('./items.json');
@@ -21,23 +23,18 @@ class ColaGenerator {
     }
   }
 
-  // <li>
-            // <button type="button" class="btn-cola on">
-            //   <img src="./img/cola-original.png" alt="" />
-            //   <span class="cola-name">Original Cola</span>
-            //   <strong class="cola-price">1000원</strong>
-            // </button>
-  //         </li>
+  // 콜라의 템플릿 코드
   colaFactory(data) {
     const docFrag = new DocumentFragment();
     // const docFrag = document.DocumentFragment();
     data.forEach((el) => {
       const item = document.createElement('li');
-      const itemTemplate = `<button type="button" class="btn-cola on">
-      <img src="./img/cola-original.png" alt="" />
-      <span class="cola-name">Original Cola</span>
-      <strong class="cola-price">1000원</strong>
-    </button>`;
+      const itemTemplate = `
+      <button type="button" class="btn-cola on" data-item="${el.name}" data-count="${el.count}" data-price="${el.cost}" data-img="${el.img}">
+      <img src="./img/${el.img}" alt="" />
+      <span class="cola-name">${el.name}</span>
+      <strong class="cola-price">${el.cost}원</strong>
+      </button>`;
       item.innerHTML = itemTemplate;
       docFrag.append(item);
     });
