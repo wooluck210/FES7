@@ -1,0 +1,156 @@
+/* header style */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+header img {
+  width: 244px;
+  height: 48px;
+}
+
+/* main style */
+main {
+  width: 400px;
+  height: 360px;
+  border-radius: 16px;
+  background: var(--gradient, linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%));
+
+  /* shadow */
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+}
+
+main h2 {
+  color: #FFF;
+  font-weight: 700;
+  line-height: normal;
+}
+
+main hr {
+  width: 312px;
+  height: 1px;
+  background: #3D538A;
+  border: none;
+}
+
+.counters {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.counters div {
+  width: 80px;
+  height: 80px;
+  background-image: url('../imgs/box.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+}
+
+.counters input {
+  width: 75%;
+  background: none;
+  border: none;
+  margin-left: 20%;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.hrs::before {
+  content: 'HRS';
+  color: #A5B6EE;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  top: -20%;
+}
+
+.hrs::after {
+  display: block;
+  content: '';
+  width: 6px;
+  height: 26px;
+  background-image: url('../imgs/dot.png');
+  position: absolute;
+  right: -19%;
+  z-index: 10;
+}
+
+.min::before {
+  content: 'MIN';
+  color: #A5B6EE;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  top: -20%;
+}
+
+.min::after {
+  display: block;
+  content: '';
+  width: 6px;
+  height: 26px;
+  background-image: url('../imgs/dot.png');
+  position: absolute;
+  right: -19%;
+  z-index: 10;
+}
+
+.sec::before {
+  content: 'SEC';
+  color: #A5B6EE;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  top: -20%;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  width: 112px;
+  height: 48px;
+  border-radius: 50px;
+  background: #324577;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.05) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: none;
+
+  color: #617199;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* footer style */
+footer {
+  color: #8596BF;
+  font-size: 14px;
+  font-weight: 400;
+}
