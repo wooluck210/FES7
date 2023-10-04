@@ -68,7 +68,7 @@ main {
     margin: 67px auto;
   }
 }
-/* 768까지 적용하겠다. */
+/* 748까지 적용하겠다. */
 @media (max-width: 748px) {
   main {
     grid-template-areas:
