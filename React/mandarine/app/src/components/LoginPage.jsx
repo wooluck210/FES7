@@ -16,6 +16,7 @@ export default function LoginPage() {
       }
     }
 
+    try {
     // 로그인 해서 토큰 꺼내기
     const res = await fetch(requrl, {
       method: "POST",
@@ -26,10 +27,19 @@ export default function LoginPage() {
     })
     const json = await res.json()
     console.log(json)
+    // 객체에 user가 없는 경우 === 로그인 실패했을 때때
+    // if (!json.user) {
+    //   return
+    // }
+    
     const token = json.user.token
     console.log(token)
     // localstorage에 토큰 저장하기
     localStorage.setItem("token", token)
+  } catch (error){
+    console.error
+    console.log('에러가 나버렸다!')
+  }
   }
 
   const inputEmail = (e) => {
