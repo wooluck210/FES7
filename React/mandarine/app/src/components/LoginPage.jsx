@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function LoginPage() {
+export default function LoginPage({handlePage}) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -62,6 +62,7 @@ export default function LoginPage() {
           <input type='text' placeholder='이메일' value={email} onChange={inputEmail} />
           <input type='text' placeholder='비밀번호' value={password} onChange={inputPassword} />
           <button>로그인</button>
+          <button type='button' onClick={handlePage}>회원가입</button>
         </form>
       </section>
     </>
