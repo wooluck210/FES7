@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      class MyArrary {
+        constructor() {
+          this.length = 0;
+          // 인덱스 번호를 키로 하여 데이터를 저장하기
+          this.data = {};
+        }
+        // 배열의 가장 마지막 원소로 데이터를 추가하기
+        push(item) {
+          this.data[this.length] = item;
+          this.length++;
+          return this.length;
+        }
+        // 배열의 가장 마지막 원소를 제거하기
+        pop() {
+          const lastItem = this.data[this.length - 1];
+          delete this.data[this.length - 1];
+          this.length--;
+          return lastItem;
+        }
+        // 인덱스에 해당하는 데이터 가져오기
+        get(index) {
+          return this.data[index];
+        }
+        // 인덱스 값으로 원소를 삭제하기
+        delWithIndex(index) {
+          this.changeOrderOfItems(index);
+          // delete this.data[index];
+          delete this.data[this.length - 1];
+          this.length--;
+          return deletedItem;
+        }
+        // 제거해야 하는 원소의 다음 원소들의 인덱스 정리
+        changeOrderOfItems(index) {
+          // 인자로 전달받은 인덱스부터 정리를 시작
+          for (let i = index; i < this.length - 1; i++) {
+            // 다음 인덱스의 값들을 하나씩 앞으로 당겨준다.
+            // [0,1,2] => [0,2,2]
+            this.data[i] = this.data[i + 1];
+          }
+        }
+      }
+      const myArr = new MyArrary();
+      myArr.push(9);
+      myArr.push(38);
+      myArr.push(4);
+      myArr.push(42);
+    </script>
+  </body>
+</html>
