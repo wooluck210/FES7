@@ -44,8 +44,8 @@
         let j = 1;
 
         // 둘 다 undefined가 되면 종료
-        while (arr1Item || arr2Item) {
-          if (arr1Item < arr2Item) {
+        while (typeof arr1Item === "number" || typeof arr2Item === "number") {
+          if (arr2Item === undefined || arr1Item < arr2Item) {
             mergedArr.push(arr1Item);
             arr1Item = arr1[i];
             i++;
